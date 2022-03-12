@@ -8,15 +8,22 @@ Komunikator związany z bezpieczeństwem oparty na aplikacji webowej. Projekt na
   - Jacek Chrząszczyk
   - Bartosz Bartosik
 
+## Funkcjonalność
+  - Komunikacja miedzy ludzmi lub grupami
+  - Możliwość tworzenia grup i pokoji
+  - Automatyczne usuwanie wiadomosci w przypadku braku autoryzacji
+  - Aplikacja internetowa
+  - 
+
 ## Technologie
   - HTML
   - CSS
   - JavaScript
   - Node.js
 
-## Srodowisko
+## Środowisko
   - Linux
-  - Nginx (port: 80)
+  - Nginx (port: 80, potem uruchuomiony bedzie na portcie: 443 )
   - MariaDB
 
 ## Deployment
