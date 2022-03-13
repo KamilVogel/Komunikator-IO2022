@@ -1,7 +1,7 @@
 # Komunikator-IO2022
 
 ## Cel projektu
-Komunikator związany z bezpieczeństwem oparty na aplikacji webowej. Projekt na zaliczenie z Inżynierii oprogramowania
+Celem projektu jest stworzenie komunikatora internetowego z funkcją udostępnienia whiteboard i jednocześnie projekt zaliczeniowy na przedmiot Inżynieria oprogramowania 
 
 ## Autorzy
   - Kamil Vogel
@@ -9,21 +9,23 @@ Komunikator związany z bezpieczeństwem oparty na aplikacji webowej. Projekt na
   - Bartosz Bartosik
 
 ## Funkcjonalność
-  - Komunikacja miedzy ludzmi lub grupami
-  - Możliwość tworzenia grup i pokoji
-  - Automatyczne usuwanie wiadomosci w przypadku braku autoryzacji
   - Aplikacja internetowa
-  - 
+  - System rejestracji użytkownika (login i hasło)
+  - Komunikacja miedzy użytkownikami przy pomocy wiadomości tekstowych
+  - Możliwość usuwania swoich wiadomości 
+  - Udostępnianie whiteboarda podczas chatu
+  - System powiadomień o dołączeniu nowego użytkownika do chatu
 
 ## Technologie
   - HTML
   - CSS
   - JavaScript
   - Node.js
+  - React
 
 ## Środowisko
   - Linux
-  - Nginx (port: 80, potem uruchuomiony bedzie na portcie: 443 )
+  - Nginx
   - MariaDB
 
 ## Deployment
