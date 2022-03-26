@@ -1,7 +1,56 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komunikator internetowy z whiteboard - Projekt na studia</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
 <body>
-
-<h1>Hello World</h1>
-
+    <div class="app">
+        <div class="page join-screen active">
+            <div class="form">
+                <h2>Okno logowania</h2>
+                <div class="form-input">
+                    <label>Nazwa użytkownika</label>
+                    <input type="text" name="username" id="username" required="">
+                    <label>Hasło</label>
+                    <input type="password" name="password" id="password" required="">
+                </div>
+                <div class="form-input">
+                    <button id="join-user">Zaloguj</button>
+                </div>
+            </div>
+        </div>
+        <div class="page chat-screen">
+            <div class="header">
+                <button class="exit-chat" id="exit-chat">Wyjdź</button>
+            </div>
+            <!-- Tymczasowo do testow, potem zmienic-->
+            <div class="messages">
+                <div class="message my-message">
+                    <div>
+                        <div class="name">Ty</div>
+                        <div class="text">Przykładowa wiadomość</div>
+                    </div>
+                </div>
+                <div class="updates">
+                    Osoba 123 dołączyła
+                </div>
+                <div class="message someones-message">
+                    <div>
+                        <div class="name">Ktoś</div>
+                        <div class="text">Inna wiadomość</div>
+                    </div>
+                </div>
+            </div>
+            <div class="typebox">
+                <input type="text" id="message-input">
+                <button id="send-message">Wyślij wiadomość</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
