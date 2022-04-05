@@ -8,7 +8,7 @@ const io =require("socket.io")(server);
 
 
 
-app.use(express.static(path.join(__dirname+"/public")))
+app.use(express.static(path.join(__dirname)))
 
 io.on("connection", function(socket){
     socket.on("newuser", function(username){
