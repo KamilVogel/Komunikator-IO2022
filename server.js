@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
 
+const port = process.env.PORT || 3000
+
 const app = express();
 const server = require("http").createServer(app);
 
@@ -22,4 +24,13 @@ io.on("connection", function(socket){
     });
 })
 
-server.listen(5000);
+//
+//Debug , to change later
+//
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+  
+app.listen(port, () => {
+    console.log(`Example app listening at ${port}`)
+ })
