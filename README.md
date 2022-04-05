@@ -28,8 +28,10 @@ Celem projektu jest stworzenie komunikatora internetowego z funkcją udostępnie
   - Nginx
   - MariaDB
 
-## Deployment
+## Deployment (WIP)
 
 Przy modifikacji branch'a main lub merge'owania do main, aplikacja webowa jest automatycznie deployowana na adres 
 
 http://komunikator-io2022.westeurope.cloudapp.azure.com/
+
+(dla brancha obecnie jest: https://projektnastudia.azurewebsites.net/ , brak pipeline'ow)
