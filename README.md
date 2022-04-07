@@ -19,14 +19,9 @@ Celem projektu jest stworzenie komunikatora internetowego z funkcją udostępnie
 ## Technologie
   - HTML
   - CSS
-  - JavaScript
   - Node.js
-  - React
-
-## Środowisko
-  - Linux
-  - Nginx
-  - MariaDB
+  - Socket.io
+  - Express
 
 ## Deployment (WIP)
 
