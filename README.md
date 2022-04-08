@@ -23,10 +23,33 @@ Celem projektu jest stworzenie komunikatora internetowego z funkcją udostępnie
   - Socket.io
   - Express
 
-## Deployment (WIP)
+## Testowanie
+Aplikacje mozna przetestowac na : https://projektnastudia.azurewebsites.net/
 
-Przy modifikacji branch'a main lub merge'owania do main, aplikacja webowa jest automatycznie deployowana na adres 
+## Ręczny deployment 
 
-http://komunikator-io2022.westeurope.cloudapp.azure.com/
+Kroki aby uruchomic aplikacje lokalnie :
 
-(dla brancha obecnie jest: https://projektnastudia.azurewebsites.net/ , brak pipeline'ow)
+0. Instalacja ``npm`` oraz ``node.js``
+1. Sklonowanie repo
+``
+git clone https://github.com/KamilVogel/Komunikator-IO2022.git; cd Komunikator-IO2022
+``
+2. Instalacja wymaganych zaleznosci
+``
+npm install socket.io express
+``
+3. Uruchomienie aplikacji
+``
+npm start
+``
+Po uruchomieniu powiinen sie wywietlic komunikat o pomyslnym uruchomieniu aplikacji. Na przykład:
+````
+user@DESKTOP:~/Komunikator-IO2022$ npm start
+
+> komunikator-io2022@1.0.0 start ~/Komunikator-IO2022
+> node server.js
+
+App started!
+Listening at port : 3000
+````

@@ -22,13 +22,11 @@ io.on("connection", function(socket){
     });
 });
 
-//
-//Debug , to change later
-//
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    //res.send('Hello World!')
 });
   
 server.listen(port, () => {
-    console.log(`Example app listening at ${port}`)
+    console.log(`App started!`)
+    console.log(`Listening at port : ${port}`)
 });
