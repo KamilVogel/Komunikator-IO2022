@@ -28,19 +28,19 @@
             username:uname,
             text:message
         });
-        app.querySelector(".chat-screen #messages").value = "";
+        app.querySelector(".chat-screen #message-input").value = "";
     });
 
     socket.on("update", function(update){
         renderMessage("update",update);
     });
 
-    socket.on("chat", function(update){
-        renderMessage("someone",update);
+    socket.on("chat", function(message){
+        renderMessage("someone",message);
     });
 
     function renderMessage(type,message){
-        let messageContainer = app.querySelector(".chat-screen #messages")
+        let messageContainer = app.querySelector(".chat-screen .messages")
         if(type == "my"){
             let el = document.createElement("div");
             el.setAttribute("class","message my-message");
@@ -49,10 +49,11 @@
                 <div class="name">Ty</div>
                 <div class="text">${message.text}</div>
             </div>
-            `;
-            messageContainer.appendChild(el); // Here it crashes, when sending message
+            `; 
+            //console.log(el);
+            messageContainer.appendChild(el);
         }
-        else if(type == "someones"){
+        else if(type == "someone"){
             let el = document.createElement("div");
             el.setAttribute("class","message someones-message");
             el.innerHTML = `
@@ -60,7 +61,8 @@
                 <div class="name">${message.username}</div>
                 <div class="text">${message.text}</div>
             </div>
-            `;
+            `; 
+            //console.log(el);
             messageContainer.appendChild(el);
         }
         else if(type == "update"){
