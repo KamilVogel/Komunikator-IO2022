@@ -24,7 +24,11 @@ Celem projektu jest stworzenie komunikatora internetowego z funkcją udostępnie
   - Express
 
 ## Testowanie
-Aplikacje mozna przetestowac na : https://projektnastudia.azurewebsites.net/
+Aplikacje mozna przetestowac na branchach: 
+
+Main - https://projektnastudia.azurewebsites.net/
+
+Development https://projektnastudia-stage.azurewebsites.net/
 
 ## Ręczny deployment 
 
@@ -37,7 +41,7 @@ git clone https://github.com/KamilVogel/Komunikator-IO2022.git; cd Komunikator-I
 ``
 2. Instalacja wymaganych zaleznosci
 ``
-npm install socket.io express
+npm install
 ``
 3. Uruchomienie aplikacji
 ``
