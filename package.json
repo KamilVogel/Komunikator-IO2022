@@ -1,0 +1,25 @@
+{
+  "name": "komunikator-io2022",
+  "version": "1.0.0",
+  "description": "projekt na studia",
+  "main": "func.js",
+  "dependencies": {
+    "express": "^4.17.3",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KamilVogel/Komunikator-IO2022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KamilVogel/Komunikator-IO2022/issues"
+  },
+  "homepage": "https://github.com/KamilVogel/Komunikator-IO2022#readme"
+}

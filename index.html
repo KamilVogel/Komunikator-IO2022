@@ -15,9 +15,9 @@
                 <h2>Okno logowania</h2>
                 <div class="form-input">
                     <label>Nazwa użytkownika</label>
-                    <input type="text" name="username" id="username" required="">
+                    <input type="text" name="username" id="username">
                     <label>Hasło</label>
-                    <input type="password" name="password" id="password" required="">
+                    <input type="password" name="password" id="password">
                 </div>
                 <div class="form-input">
                     <button id="join-user">Zaloguj</button>
@@ -28,23 +28,7 @@
             <div class="header">
                 <button class="exit-chat" id="exit-chat">Wyjdź</button>
             </div>
-            <!-- Tymczasowo do testow, potem zmienic-->
             <div class="messages">
-                <div class="message my-message">
-                    <div>
-                        <div class="name">Ty</div>
-                        <div class="text">Przykładowa wiadomość</div>
-                    </div>
-                </div>
-                <div class="updates">
-                    Osoba 123 dołączyła
-                </div>
-                <div class="message someones-message">
-                    <div>
-                        <div class="name">Ktoś</div>
-                        <div class="text">Inna wiadomość</div>
-                    </div>
-                </div>
             </div>
             <div class="typebox">
                 <input type="text" id="message-input">
@@ -52,5 +36,9 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript" src="socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="func.js"></script>
+    
 </body>
 </html>
