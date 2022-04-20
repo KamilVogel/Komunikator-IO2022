@@ -115,6 +115,7 @@ body {
 
 .chat-screen {
     background-color: #0f0c29;
+    height: 100%;;
 }
 
 .chat-screen .header button {
@@ -184,4 +185,15 @@ body {
     outline: none;
     border: 0px;
     cursor: pointer;
+}
+.wb
+{
+    background-color: white;
+    width: 350px;
+    height: 350px;
+    position:absolute;
+    left: 100%;
+    top:10%;
+    align-items: center;
+    border: solid 4px #573b8a;
 }

@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="app">
-        <div class="page join-screen active">
+        <div class="page join-screen">
             <div class="form">
                 <h2>Okno logowania</h2>
                 <div class="form-input">
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="page chat-screen">
+        <div class="page chat-screen active">
             <div class="header">
                 <button class="exit-chat" id="exit-chat">Wyjdź</button>
             </div>
@@ -33,6 +33,9 @@
             <div class="typebox">
                 <input type="text" id="message-input">
                 <button id="send-message">Wyślij wiadomość</button>
+            </div>
+            <div class="wb">
+                <canvas id="whiteboard" width="800" height="600"></canvas>
             </div>
         </div>
     </div>
