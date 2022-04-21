@@ -23,8 +23,6 @@ io.on("connection", function(socket){
     socket.on("drawDot", function(data){
 		socket.broadcast.emit("drawDot", data);
 	})
-	
-	
 	socket.on("drawLine", function(data){
 		socket.broadcast.emit("drawLine", data);
 	})

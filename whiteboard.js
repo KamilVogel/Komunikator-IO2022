@@ -1,4 +1,3 @@
-
 var socket;
 var stage;
 var drawingCanvas,
@@ -6,7 +5,6 @@ var drawingCanvas,
 	oldMidPt,
 	color = "#0000FF",
 	stroke = 4;
-
 
 $(function(){
 	
@@ -20,10 +18,6 @@ $(function(){
 		drawLine(data.mpx, data.mpy, data.opx, data.opy, data.ompx, data.ompy);
 	});
 	
-	
-	
-		
-	
 	stage = new createjs.Stage(document.getElementById("whiteboard"));
 	stage.enableMouseOver(10);
 	stage.mouseMoveOutside = false;
@@ -35,14 +29,12 @@ $(function(){
 	stage.addEventListener("stagemousedown", mouseDownHandler);
 	stage.addEventListener("stagemouseup", mouseUpHandler);
 	
-	
 });
 
 function mouseDownHandler(e){
 	oldPt = new createjs.Point(e.localX, e.localY);
 	oldMidPt = oldPt;
 	var midPt = new createjs.Point(oldPt.x + e.localX >> 1, oldPt.y + e.localY >> 1);
-	
 	
 	drawDot(midPt);
 	
@@ -53,7 +45,6 @@ function mouseDownHandler(e){
 
 function mouseMoveHandler(e){
 	var midPt = new createjs.Point(oldPt.x + e.localX >> 1, oldPt.y + e.localY >> 1);
-	
 	
 	drawLine(midPt.x, midPt.y, oldPt.x, oldPt.y, oldMidPt.x, oldMidPt.y);
 	
