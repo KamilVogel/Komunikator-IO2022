@@ -10,7 +10,7 @@ var drawingCanvas,
 
 $(function(){
 	
-	const socket = io();
+	socket = io();
 	
 	socket.on("drawDot", function(data){
 		drawDot(data);
