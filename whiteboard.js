@@ -5,11 +5,19 @@ var drawingCanvas,
 	oldMidPt,
 	color = "#0000FF",
 	stroke = 4;
+var room;
+const app = document.querySelector(".app");
 
 $(function(){
 	
 	socket = io();
-	
+
+	app.querySelector(".join-screen #join-user").addEventListener("click",function(){
+        room = app.querySelector(".join-screen #destination").value;
+        console.log(room)
+        socket.emit('create', room);
+    });
+
 	socket.on("drawDot", function(data){
 		drawDot(data);
 	});
