@@ -28,7 +28,7 @@ Aplikacje mozna przetestowac na branchach:
 
 Main - https://projektnastudia.azurewebsites.net/
 
-Development https://projektnastudia-stage.azurewebsites.net/
+Development - https://projektnastudia-stage.azurewebsites.net/
 
 ## Ręczny deployment 
 
@@ -47,7 +47,7 @@ npm install
 ``
 npm start
 ``
-Po uruchomieniu powiinen sie wywietlic komunikat o pomyslnym uruchomieniu aplikacji. Na przykład:
+Po uruchomieniu powinien sie wywietlic komunikat o pomyslnym uruchomieniu aplikacji. Na przykład:
 ````
 user@DESKTOP:~/Komunikator-IO2022$ npm start
 

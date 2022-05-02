@@ -18,6 +18,8 @@
                     <input type="text" name="username" id="username">
                     <label>Hasło</label>
                     <input type="password" name="password" id="password">
+                    <label>Nazwa pokoju</label>
+                    <input type="text" name="destination" id="destination">
                 </div>
                 <div class="form-input">
                     <button id="join-user">Zaloguj</button>
@@ -34,11 +36,18 @@
                 <input type="text" id="message-input">
                 <button id="send-message">Wyślij wiadomość</button>
             </div>
+            <div class="wb">
+                <canvas id="whiteboard" width="350" height="350"></canvas>
+                <button id="clear_button">Clear</button>
+            </div>
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="https://code.createjs.com/easeljs-0.7.1.min.js"></script>
     <script type="text/javascript" src="socket.io/socket.io.js"></script>
     <script type="text/javascript" src="func.js"></script>
+	<script type="text/javascript" src="whiteboard.js" ></script>
     
 </body>
 </html>

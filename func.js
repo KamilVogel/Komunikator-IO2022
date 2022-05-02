@@ -1,14 +1,19 @@
 (function(){
     const app = document.querySelector(".app");
     const socket = io();
-    
+    var room;
+
     let uname;
 
     app.querySelector(".join-screen #join-user").addEventListener("click",function(){
         let username = app.querySelector(".join-screen #username").value;
-        if(username.length == 0){
+        let password = app.querySelector(".join-screen #password").value;
+        room = app.querySelector(".join-screen #destination").value;
+        console.log(room)
+        if(username.length == 0 && password.length == 0 && room.length == 0){
             return;
         }
+        socket.emit('create', room);
         socket.emit("newuser",username);
         uname = username;
         app.querySelector(".join-screen").classList.remove("active");
@@ -29,6 +34,11 @@
             text:message
         });
         app.querySelector(".chat-screen #message-input").value = "";
+    });
+
+    app.querySelector(".chat-screen #exit-chat").addEventListener("click",function(){
+        socket.emit("exituser",uname);
+        window.location.href = window.location.href;
     });
 
     socket.on("update", function(update){
