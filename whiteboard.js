@@ -25,6 +25,10 @@ $(function(){
 	socket.on("drawLine",function(data){
 		drawLine(data.mpx, data.mpy, data.opx, data.opy, data.ompx, data.ompy);
 	});
+
+	socket.on("clearDrawing", function(){
+		clearDrawing();
+	});
 	
 	stage = new createjs.Stage(document.getElementById("whiteboard"));
 	stage.enableMouseOver(10);
@@ -36,7 +40,11 @@ $(function(){
 	stage.addChild(drawingCanvas);
 	stage.addEventListener("stagemousedown", mouseDownHandler);
 	stage.addEventListener("stagemouseup", mouseUpHandler);
-	
+
+	$("#clear_button").click(function(){
+		clearDrawing();
+		socket.emit("clearDrawing");
+	});
 });
 
 function mouseDownHandler(e){
@@ -79,3 +87,6 @@ function drawLine(origX, origY, oldX, oldY, oldMidX, oldMidY){
 	stage.update();
 }
 
+function clearDrawing(){
+	stage.clear();
+}

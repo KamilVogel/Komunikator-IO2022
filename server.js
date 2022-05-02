@@ -31,6 +31,9 @@ io.on("connection", function (socket) {
         socket.on("drawLine", function (data) {
             socket.in(room).emit("drawLine", data);
         });
+        socket.on("clearDrawing", function(){
+            socket.in(room).emit("clearDrawing");
+        })
 
     });
 });
