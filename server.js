@@ -1,4 +1,4 @@
-/*
+
 
 
 const url = "mongodb+srv://admin:admin@cluster0.reoei.mongodb.net/users?retryWrites=true&w=majority"
@@ -17,7 +17,7 @@ mongoose.connect(url, connectionParams)
     })
 
     
-*/
+
 
     
 
@@ -71,7 +71,7 @@ server.listen(port, () => {
     console.log(`App started!`)
     console.log(`Listening at port : ${port}`)
 
- /*   var Schema = mongoose.Schema;
+    var Schema = mongoose.Schema;
 
 
 var adminLogin = new Schema({
@@ -94,14 +94,13 @@ login.findById(id, function (err, docs) {
     }
 });
 
-*/
+
 
 });
 
-/*
-app.post('/send',
-(req, res)=> {
-    console.log(req.body)
+app.use(express.json())
+app.post('/send', (req, res) => {
+    console.log(req.body) 
 })
 
-*/
+
