@@ -1,7 +1,32 @@
+/*
+
+
+const url = "mongodb+srv://admin:admin@cluster0.reoei.mongodb.net/users?retryWrites=true&w=majority"
+const connectionParams = {
+    useNewUrlParser: true,
+    //useCreateIndex: true,
+    useUnifiedTopology: true
+}
+const mongoose = require('mongoose')
+mongoose.connect(url, connectionParams)
+    .then(() => {
+        console.log('Connected to the database ')
+    })
+    .catch((err) => {
+        console.error('Error connecting to the database. n${err}');
+    })
+
+    
+*/
+
+    
+
 const express = require("express");
 const path = require("path");
 
 const port = process.env.PORT || 3000;
+
+
 
 const app = express();
 const server = require("http").createServer(app);
@@ -45,4 +70,38 @@ app.get('/', (req, res) => {
 server.listen(port, () => {
     console.log(`App started!`)
     console.log(`Listening at port : ${port}`)
+
+ /*   var Schema = mongoose.Schema;
+
+
+var adminLogin = new Schema({
+    login: String,
+    password: String
+},
+{collection: 'login'});
+
+const login = mongoose.model('login', adminLogin);
+
+const admin = new login({ login: 'admin' });
+console.log(admin.login);
+var id = '627040a0284dbf19fe515253';
+login.findById(id, function (err, docs) {
+    if (err){
+        console.log(err);
+    }
+    else{
+        console.log("Result : ", docs);
+    }
 });
+
+*/
+
+});
+
+/*
+app.post('/send',
+(req, res)=> {
+    console.log(req.body)
+})
+
+*/
