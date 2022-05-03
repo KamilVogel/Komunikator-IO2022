@@ -19,6 +19,19 @@
         let titleChat = app.querySelector("#chat-label").innerHTML = "Jesteś w pokoju : " + room;
         app.querySelector(".join-screen").classList.remove("active");
         app.querySelector(".chat-screen").classList.add("active");
+        fetch('/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "user": {
+                    "email": username,
+                    "password": password
+                }
+            }),
+
+        });
     });
 
     app.querySelector(".chat-screen #send-message").addEventListener("click",function(){
