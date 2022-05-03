@@ -10,7 +10,7 @@
         let password = app.querySelector(".join-screen #password").value;
         room = app.querySelector(".join-screen #destination").value;
         console.log(room)
-        if(username.length == 0 && password.length == 0 && room.length == 0){
+        if(username.length == 0 || password.length == 0 || room.length == 0){
             return;
         }
         socket.emit('create', room);
