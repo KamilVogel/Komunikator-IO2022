@@ -16,6 +16,7 @@
         socket.emit('create', room);
         socket.emit("newuser",username);
         uname = username;
+        let titleChat = app.querySelector("#chat-label").innerHTML = "Jesteś w pokoju : " + room;
         app.querySelector(".join-screen").classList.remove("active");
         app.querySelector(".chat-screen").classList.add("active");
     });
@@ -47,6 +48,11 @@
 
     socket.on("chat", function(message){
         renderMessage("someone",message);
+    });
+
+    app.querySelector("#clear-messages").addEventListener("click",function(){
+        let messageContainer = app.querySelector(".chat-screen .messages")
+        messageContainer.innerHTML = "";
     });
 
     function renderMessage(type,message){

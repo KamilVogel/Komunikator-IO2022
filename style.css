@@ -115,7 +115,7 @@ body {
 
 .chat-screen {
     background-color: #0f0c29;
-    height: 100%;;
+    height: 100%;
 }
 
 .chat-screen .header button {
@@ -127,6 +127,13 @@ body {
     font-size: 15px;
     cursor: pointer;
     outline: none;
+}
+
+.chat-screen .header label {
+    margin-left: auto;
+    margin-right: auto;
+    width: 10em;
+    color: #e0dede;
 }
 
 .chat-screen .messages {
