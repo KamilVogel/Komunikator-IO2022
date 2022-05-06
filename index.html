@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="app">
         <div class="page join-screen active">
@@ -23,6 +25,12 @@
                 </div>
                 <div class="form-input">
                     <button id="join-user">Zaloguj</button>
+                </div>
+                <div>
+                    <label id="reg-section" hidden>Użytkownik nie istnieje <button id="register">kliknij</button> aby utworzyć konto</label>
+                </div>
+                <div>
+                    <label id="reg-gut" hidden>Utworzono konto</label>
                 </div>
             </div>
         </div>
@@ -49,10 +57,10 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="https://code.createjs.com/easeljs-0.7.1.min.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.7.1.min.js"></script>
     <script type="text/javascript" src="socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="func.js"></script> //zmienć na auth.js w celu sprawdzenia logowania
-	<script type="text/javascript" src="whiteboard.js" ></script>
-    
+    <script type="text/javascript" src="func.js"></script>
+    <script type="text/javascript" src="whiteboard.js"></script>
 </body>
+
 </html>
