@@ -12,7 +12,12 @@
             let password = app.querySelector(".join-screen #password").value;
             room = app.querySelector(".join-screen #destination").value;
             console.log(room);
+
+            app.querySelector(".join-screen #reg-section").setAttribute("hidden", "true")
+            app.querySelector(".join-screen #invalid-pass").setAttribute("hidden", "true")
+            app.querySelector(".join-screen #reg-gut").setAttribute("hidden", "true")
             if (username.length == 0 || password.length == 0 || room.length == 0) {
+                app.querySelector(".join-screen #invalid-pass").removeAttribute("hidden")
                 return;
             }
             fetch("/send", {
@@ -34,7 +39,8 @@
                         app.querySelector(".chat-screen").classList.add("active");
                     } else if (response.status === 401) {
                         app.querySelector(".join-screen #reg-section").removeAttribute("hidden")
-
+                    } else if (response.status === 400) {
+                        app.querySelector(".join-screen #invalid-pass").removeAttribute("hidden")
                     }
                 })
                 .catch((error) => {

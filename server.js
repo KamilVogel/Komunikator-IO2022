@@ -12,8 +12,18 @@ mongoose
         console.log("Connected to the database ");
     })
     .catch((err) => {
-        console.error("Error connecting to the database. n${err}");
+        console.error(err);
     });
+
+var Schema = mongoose.Schema;
+
+var adminLogin = new Schema({
+    login: String,
+    password: String,
+    email: String,
+}, { collection: "login" });
+
+const login = mongoose.model("login", adminLogin);
 
 const express = require("express");
 const path = require("path");
@@ -60,30 +70,10 @@ app.get("/", (req, res) => {
 server.listen(port, () => {
     console.log(`App started!`);
     console.log(`Listening at port : ${port}`);
-
-    var Schema = mongoose.Schema;
-
-    var adminLogin = new Schema({
-        login: String,
-        password: String,
-    }, { collection: "login" });
-
-    const login = mongoose.model("login", adminLogin);
-
-    const admin = new login({ login: "admin" });
-    console.log(admin.login);
-    var id = "627040a0284dbf19fe515253";
-    login.findById(id, function(err, docs) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("Result : ", docs);
-        }
-    });
 });
 
 app.use(express.json());
-app.post("/send", (req, res) => {
+app.post("/send", function(req, res) {
     console.log(req.body);
 
     var passwordValidator = require('password-validator');
@@ -98,22 +88,31 @@ app.post("/send", (req, res) => {
         .is().not().oneOf(['Password', 'Password123']); // Blacklist these values
 
     if (!schema.validate(req.body.password)) {
-        res.status(400).send("Invalid password");
+        return res.status(400).send("Invalid password");
     }
 
     const emailvalidator = require("email-validator");
-    if (emailvalidator.validate(req.body.email)) {
-        // check if exist
-    } else {
-        res.status(400).send("Invalid Email");
+    if (!emailvalidator.validate(req.body.email)) {
+        return res.status(400).send("Invalid Email");
     }
-    res.status(401).send("User Exist")
-        //res.status(200).send("Good Email");
+
+    login.findOne({ email: req.body.email }, function(err, docs) {
+        if (err) {
+            console.log(err);
+        } else {
+            if (docs == null) {
+                return res.status(401).send("User not exist")
+            }
+            if (docs.password === req.body.password) {
+                return res.status(200).send("Good email");
+            } else
+                return res.status(400).send("Invalid password")
+        }
+    });
+
 });
 
 app.post("/register", (req, res) => {
-    console.log("dupa");
-
     var passwordValidator = require('password-validator');
     var schema = new passwordValidator();
     schema
@@ -126,14 +125,23 @@ app.post("/register", (req, res) => {
         .is().not().oneOf(['Password', 'Password123']); // Blacklist these values
 
     if (!schema.validate(req.body.password)) {
-        res.status(400).send("Invalid password");
+        return res.status(400).send("Invalid password");
     }
 
     const emailvalidator = require("email-validator");
-    if (emailvalidator.validate(req.body.email)) {
-        // check if exist
-    } else {
-        res.status(400).send("Invalid Email");
+    if (!emailvalidator.validate(req.body.email)) {
+        return res.status(400).send("Invalid Email");
     }
-    res.status(200).send("Good Email");
+
+    login.findOne({ email: req.body.email }, function(err, docs) {
+        if (err) {
+            console.log(err);
+        } else {
+            if (docs == null) {
+                login.create({ email: req.body.email, password: req.body.password })
+                return res.status(200).send("Account created");
+            } else
+                return res.status(400).send("Invalid password")
+        }
+    });
 });
