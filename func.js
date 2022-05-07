@@ -114,6 +114,15 @@
         messageContainer.innerHTML = "";
     });
 
+    app.querySelector("#show-whiteboard").addEventListener("click",function(){
+        console.log(document.getElementById("wb").style.display)
+        if( document.getElementById("wb").style.display == "none" || document.getElementById("wb").style.display == "" ){
+            document.getElementById("wb").style.display = "inline";
+        } else {
+            document.getElementById("wb").style.display = "none"; 
+        }
+    });
+
     function renderMessage(type, message) {
         let messageContainer = app.querySelector(".chat-screen .messages");
         if (type == "my") {
