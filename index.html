@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,35 +9,54 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="app">
         <div class="page join-screen active">
             <div class="form">
                 <h2>Okno logowania</h2>
                 <div class="form-input">
-                    <label>Nazwa użytkownika</label>
+                    <label>Nazwa użytkownika (E-mail)</label>
                     <input type="text" name="username" id="username">
-                    <label>Hasło</label>
+                    <label>Hasło (Minimum 4 znaki)</label>
                     <input type="password" name="password" id="password">
-                    <label>Nazwa pokoju</label>
-                    <input type="text" name="destination" id="destination">
+                    <label>Wybierz pokój</label>
+                    <select name="destination" id="destination">
+                        <option value="Pokój 1" selected>Pokój 1</option>
+                        <option value="Pokój 2">Pokój 2</option>
+                        <option value="Pokój 3">Pokój 3</option>
+                        <option value="Pokój 4">Pokój 4</option>
+                        <option value="Pokój 5">Pokój 5</option>
+                    </select>
                 </div>
                 <div class="form-input">
                     <button id="join-user">Zaloguj</button>
+                </div>
+                <div>
+                    <label id="reg-section" hidden>Użytkownik nie istnieje <button id="register">kliknij</button> aby utworzyć konto</label>
+                </div>
+                <div>
+                    <label id="reg-gut" hidden>Utworzono konto</label>
+                </div>
+                <div>
+                    <label id="invalid-pass" hidden>Błędny email lub hasło</label>
                 </div>
             </div>
         </div>
         <div class="page chat-screen">
             <div class="header">
                 <button class="exit-chat" id="exit-chat">Wyjdź</button>
+                <label class="chat-label" id="chat-label">Jesteś w : </label>
             </div>
             <div class="messages">
             </div>
             <div class="typebox">
                 <input type="text" id="message-input">
                 <button id="send-message">Wyślij wiadomość</button>
+                <button id="clear-messages">Wyczysc chat</button>
+                <button id="show-whiteboard">Pokaz/Ukryj Whiteboarda</button>
             </div>
-            <div class="wb">
+            <div class="wb" id="wb">
                 <canvas id="whiteboard" width="350" height="350"></canvas>
                 <button id="clear_button">Wyczyść</button>
                 <button id="red">Czerwony</button>
@@ -47,10 +67,10 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="https://code.createjs.com/easeljs-0.7.1.min.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.7.1.min.js"></script>
     <script type="text/javascript" src="socket.io/socket.io.js"></script>
     <script type="text/javascript" src="func.js"></script>
-	<script type="text/javascript" src="whiteboard.js" ></script>
-    
+    <script type="text/javascript" src="whiteboard.js"></script>
 </body>
+
 </html>
