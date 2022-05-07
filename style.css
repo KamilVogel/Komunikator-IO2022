@@ -82,6 +82,20 @@ body {
 	border-radius: 5px;
 }
 
+
+.page .form-input select {
+    width: 60%;
+	height: 20px;
+	background: #e0dede;
+    color: #000000;
+	justify-content: center;
+	display: flex;
+	margin: 10px auto;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
 .page .form-input button {
     width: 60%;
 	height: 40px;
