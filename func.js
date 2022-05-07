@@ -119,7 +119,6 @@
                 <div class="text">${message.text}</div>
             </div>
             `;
-            //console.log(el);
             messageContainer.appendChild(el);
         } else if (type == "someone") {
             let el = document.createElement("div");
@@ -130,7 +129,6 @@
                 <div class="text">${message.text}</div>
             </div>
             `;
-            //console.log(el);
             messageContainer.appendChild(el);
         } else if (type == "update") {
             let el = document.createElement("div");

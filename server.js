@@ -116,8 +116,8 @@ app.post("/register", (req, res) => {
     var passwordValidator = require('password-validator');
     var schema = new passwordValidator();
     schema
-        .is().min(4) // Minimum length 8
-        .is().max(32) // Maximum length 100
+        .is().min(4) // Minimum length 4
+        .is().max(32) // Maximum length 32
         //.has().uppercase() // Must have uppercase letters
         //.has().lowercase() // Must have lowercase letters
         //.has().digits(2) // Must have at least 2 digits
